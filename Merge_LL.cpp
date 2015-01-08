@@ -12,9 +12,11 @@
 using namespace std;
 
 void print_array(int *ptr, int len);
-void merge_arrays(int *ptr1, int len1, int *ptr2, int len2, int *ptr3);
+
 void create_linkedlist(int *ptr, struct node **list, int len);
+
 void print_linkedlist(struct node* list);
+
 void merge_linkedlist(struct node* list1, struct node* list2, struct node** list3);
 
 struct node{
@@ -74,15 +76,6 @@ int main(){
 	cout << "\nMerged LL\n";
 	print_linkedlist(list3);
 	
-	/*
-	merge_arrays(array1,n1,array2,n2,array3);
-	
-	cout << "\nMerged array\n";
-	
-	n3 = n1 + n2;
-	
-	print_array(array3, n3);
-	*/
 	return 0;
 	
 }
@@ -174,41 +167,4 @@ void print_array(int *ptr, int len){
 		
 	}
 	cout << "\n";
-}
-
-
-//Merge arrays
-void merge_arrays(int *ptr1, int len1, int *ptr2, int len2, int *ptr3){
-	
-	int i = 0, j = 0, k = 0;
-	
-	while (i<len1 && j<len2){
-		
-		if(*(ptr1+i)<*(ptr2+j)){
-			
-			*(ptr3+k) = *(ptr1+i);
-			i++;
-		}
-		else{
-			*(ptr3+k) = *(ptr2+j);
-			j++;
-		}
-		k++;
-	}
-	
-	if(i == len1 && j != len2){
-		
-		while(j!=len2){
-			*(ptr3+k) = *(ptr2+j);
-			j++; k++;
-		}
-	}
-	else if (i != len1 && j == len2){
-		
-		while(i!=len1){
-			*(ptr3+k) = *(ptr1+i);
-			i++; k++;
-		}
-	}
-	
 }
