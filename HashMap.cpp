@@ -1,3 +1,10 @@
+/*
+ * Program: Hash map implementation
+ * 
+ * Author: Jwala Mohith Girisha
+ * 
+ */
+
 #include<iostream>
 
 using namespace std;
